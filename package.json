@@ -12,7 +12,9 @@
   "license": "ISC",
   "description": "Mi primer backend fachero",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

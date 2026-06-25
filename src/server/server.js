@@ -2,6 +2,7 @@ import express from "express";
 const app = express();
 import pancitosRouter from "../routers/pancitos.routes.js";
 import tortasRouter from "../routers/tortas.routes.js";
+import carsRouter from "../routers/cars.routes.js";
 // import {fileURLToPath} from 'url';
 // import path, {dirname} from "path";
 
@@ -34,6 +35,8 @@ app.get("/pancitos", (_, response) => {
 app.use("/pancitos", pancitosRouter)
 
 app.use("/tortas", tortasRouter)
+
+app.use("/cars", carsRouter)
 
 
 
