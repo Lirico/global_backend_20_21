@@ -6,6 +6,9 @@ import carsRouter from "../routers/cars.routes.js";
 // import {fileURLToPath} from 'url';
 // import path, {dirname} from "path";
 
+// Le permitimos a express entender el json del body de las request.
+app.use(express.json());
+
 // Para ES Modules
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);

@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllCarsController, getCarByIdController } from "../controllers/cars.controller.js";
+import { getAllCarsController, getCarByIdController, addCarController, updateCarController } from "../controllers/cars.controller.js";
 
 
 const carsRouter = express.Router();
@@ -8,6 +8,12 @@ const carsRouter = express.Router();
 carsRouter.get('/', getAllCarsController)
 
 carsRouter.get('/:id', getCarByIdController)
+
+carsRouter.post('/', addCarController)
+
+carsRouter.put('/:id', updateCarController)
+
+carsRouter.delete('/:id', deleteCarController)
 
 
 export default carsRouter;
@@ -18,4 +24,20 @@ export default carsRouter;
 
 // cars/id se convierta en un parametro se le agregan dos puntitos.
 
+
+
+
+/* 
+    POST -> '/' -> Insertan un objeto 
+         -> body -> {marca: "BMW", modelo: "X5", año: 2023, color: "Negro"}
+
+    GET -> '/' -> Trae todos los objetos
+
+    POST -> '/' -> Traiga los objetos de la pagina 2
+         -> body -> {page: 2, limit: 10}
+
+    const getCarsFromPageService = async (page, limit) => {
+        const cars = await Cars.find().skip((page - 1) * limit).limit(limit);
+    }
+*/
 

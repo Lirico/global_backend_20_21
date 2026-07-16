@@ -1,4 +1,4 @@
-import { getAllCarsService, getCarByIdService } from "../services/cars.services.js";
+import { getAllCarsService, getCarByIdService, addCarService, updateCarService } from "../services/cars.services.js";
 
 
 
@@ -15,19 +15,23 @@ const getCarByIdController = async (request, response) => {
     response.json(car);
 }
 
+const addCarController = async (request, response) => {
+     const resultMessage = await addCarService(request.body);
+
+     response.json(resultMessage);
+}
+
+const updateCarController = async (request, response) => {
+    const resultMessage = await updateCarService(request.body, request.params.id);
+
+    response.json(resultMessage);
+}
 
 export {
     getAllCarsController,
-    getCarByIdController
+    getCarByIdController,
+    addCarController,
+    updateCarController
 }
 
 
-const request = {
-    header: {},
-    body: {},
-    params: {
-        id: "668asdajhsdhaksda76382"
-    }
-}
-
-// request.params.id
